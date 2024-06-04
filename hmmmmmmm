@@ -1,10 +1,24 @@
 --Main
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-local Window = OrionLib:MakeWindow({Name = "SLEEPER MENÜ - EGSA", HidePremium = false, SaveConfig = true, IntroText = "Sleeper Menü", IntroIcon = "rbxassetid://7733752630", Icon = "rbxassetid://7733920519", ConfigFolder = "OrionTest"})
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "SLEEPER MENÜ - EGSA - V1.7", HidePremium = false, SaveConfig = true, IntroText = "Sleeper Menü", IntroIcon = "rbxassetid://7733752630", Icon = "rbxassetid://7733920519", ConfigFolder = "OrionTest"})
 
 --Tab 1
+
+OrionLib:MakeNotification({
+	Name = "Giriş Yapıldı!",
+	Content = "Şu kişi olarak giriş yaptınız. "..Player.Name.." ", 
+	Image = "rbxassetid://7733964719",
+	Time = 7
+})
+
+OrionLib:MakeNotification({
+	Name = "Merhaba.",
+	Content = "Sleep tarafından yapıldı, iyi eğlenceler!",
+	Image = "rbxassetid://7733752630",
+	Time = 7
+})
 
 local Tab = Window:MakeTab({
 	Name = "Ana Yer",
