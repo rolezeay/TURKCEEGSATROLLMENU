@@ -311,6 +311,14 @@ Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
 Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
 end)
 Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+
+OrionLib:MakeNotification({
+	Name = "(DELUXIE) Hazır!",
+	Content = "Artık takılmadan vurup/dash atabilirsin. (Reset atınca gider.)",
+	Image = "rbxassetid://7733964719",
+	Time = 5
+})
+
   	end    
 })
 
