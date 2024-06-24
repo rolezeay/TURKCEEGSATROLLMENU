@@ -2,7 +2,7 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({Name = "SLEEPER MENÜ - EGSA - V1.7", HidePremium = false, SaveConfig = true, IntroText = "Sleeper Menü", IntroIcon = "rbxassetid://7733752630", Icon = "rbxassetid://7733920519", ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Deluxie - EGSA - V1.8", HidePremium = false, SaveConfig = true, IntroText = "DELUXIE", IntroIcon = "rbxassetid://7733752630", Icon = "rbxassetid://7733920519", ConfigFolder = "OrionTest"})
 
 --Tab 1
 
@@ -19,6 +19,15 @@ OrionLib:MakeNotification({
 	Image = "rbxassetid://7733752630",
 	Time = 7
 })
+
+local Tab = Window:MakeTab({
+	Name = "Hoşgeldiniz",
+	Icon = "rbxassetid://7733955740",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("Merhaba!","Merhaba, "..Player.Name.." ")
+Tab:AddParagraph("Teşekkürler.","Deluxie'yi kullandığın için teşekkür ederim. Umarım keyif alırsın.")
 
 local Tab = Window:MakeTab({
 	Name = "Ana Yer",
@@ -62,6 +71,13 @@ game:GetService("UserInputService").InputBegan:Connect(function(input, isProcess
     end
 end)
  
+OrionLib:MakeNotification({
+	Name = "(DELUXIE) Hazır!",
+	Content = "Artık R tuşuna bastığınızda 10 saniye reset limiti dolmasa bile reset çekebilirsiniz.",
+	Image = "rbxassetid://7733964719",
+	Time = 5
+})
+
   	end    
 })
 
@@ -167,6 +183,14 @@ Tab:AddButton({
         end
         
         userInputService.InputBegan:Connect(onKeyPress)
+
+OrionLib:MakeNotification({
+	Name = "(DELUXIE) Hazır!",
+	Content = "E tuşuyla aktif edin/kapatın.",
+	Image = "rbxassetid://7733964719",
+	Time = 5
+})
+
   	end    
 })
 
@@ -203,11 +227,63 @@ UIS.InputBegan:Connect(function(Key)
         end
     end
 end)
+
+OrionLib:MakeNotification({
+	Name = "(DELUXIE) Hazır!",
+	Content = "C tuşuyla aktif edin.",
+	Image = "rbxassetid://7733964719",
+	Time = 5
+})
+
   	end    
 })
 
 Tab:AddButton({
-	Name = "Herzaman aynı Zıplama Gücüne sahip ol",
+	Name = "Her zaman öldüğün yerde doğ.",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local respawnPosition = nil
+
+-- Function to set the respawn position to the place where the player dies
+local function onCharacterDied()
+    if player.Character then
+        respawnPosition = player.Character:FindFirstChild("HumanoidRootPart").Position
+    end
+end
+
+-- Function to handle the respawn
+local function onCharacterAdded(character)
+    if respawnPosition then
+        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+        humanoidRootPart.CFrame = CFrame.new(respawnPosition)
+        respawnPosition = nil -- Clear the respawn position after respawning
+    end
+
+    local humanoid = character:WaitForChild("Humanoid")
+    humanoid.Died:Connect(onCharacterDied)
+end
+
+-- Connect the CharacterAdded event to handle respawning
+player.CharacterAdded:Connect(onCharacterAdded)
+
+-- If the character already exists (e.g., when the script runs for the first time), set up the respawn handling
+if player.Character then
+    onCharacterAdded(player.Character)
+end
+
+OrionLib:MakeNotification({
+	Name = "(DELUXIE) Hazır!",
+	Content = "Artık her zaman öldüğün yerde doğacaksın. (Rejoin atınca gider.)",
+	Image = "rbxassetid://7733964719",
+	Time = 5
+})
+
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Her zaman aynı Zıplama Gücüne sahip ol",
 	Callback = function()
       				getgenv().JumpPowerValue = 50; --set your desired walkspeed here
 local Player = game:service'Players'.LocalPlayer;
@@ -215,6 +291,14 @@ Player.Character.Humanoid:GetPropertyChangedSignal'JumpPower':Connect(function()
 Player.Character.Humanoid.JumpPower = getgenv().JumpPowerValue;
 end)
 Player.Character.Humanoid.JumpPower = getgenv().JumpPowerValue;
+
+OrionLib:MakeNotification({
+	Name = "(DELUXIE) Hazır!",
+	Content = "Artık zıplama gücün git gide düşmek yerine sadece 50 olacak. (Reset atınca gider.)",
+	Image = "rbxassetid://7733964719",
+	Time = 5
+})
+
   	end    
 })
 
@@ -462,8 +546,16 @@ print(Time)
 	 end
 		 end
 	 end)
+OrionLib:MakeNotification({
+	Name = "(DELUXIE) Hazır!",
+	Content = "Artık insanların üstüne tıklayarak onları uçurabilirsin!",
+	Image = "rbxassetid://7733964719",
+	Time = 5
+})
+     
   	end    
 })
+
 
 Tab:AddButton({
 	Name = "Tıkla Işınlan",
@@ -632,6 +724,38 @@ Tab:AddButton({
   	end    
 })
 
+local Section = Tab:AddSection({
+	Name = "Odalar."
+})
+
+Tab:AddButton({
+	Name = "Death Counter Odası (Dışarı)",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-83.20497131347656, 89.46064758300781, 20356.18359375)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Death Counter Odası (İçeri)",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-72.33052825927734, 46.73237991333008, 20340.88671875)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Atomic Slash Odası (Dışarı)",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1167.722900390625, 19.980613708496094, 23153.947265625)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Atomic Slash Odası (İçeri)",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1057.4031982421875, 157.00021362304688, 23004.546875)
+  	end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Daha Fazlası",
 	Icon = "rbxassetid://7734111084",
@@ -643,7 +767,7 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "ESP aç",
+	Name = "İsim ESP aç",
 	Callback = function()
         local ReplicatedStorage = game:GetService("ReplicatedStorage")
  local Players = game:GetService("Players")
@@ -755,7 +879,7 @@ end
 })
 
 Tab:AddButton({
-	Name = "ESP kapat",
+	Name = "İsim ESP kapat",
 	Callback = function()
         addedFunc:Disconnect()
  for _, player in ipairs(game.Players:GetPlayers()) do
@@ -785,6 +909,55 @@ end
   	end    
 })
 
+Tab:AddButton({
+	Name = "Full karakter ESP",
+	Callback = function()
+      		    local Players = game:GetService("Players"):GetChildren()
+        local RunService = game:GetService("RunService")
+        local highlight = Instance.new("Highlight")
+        highlight.Name = "Highlight"
+        
+        for i, v in pairs(Players) do
+            repeat wait() until v.Character
+            if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+                local highlightClone = highlight:Clone()
+                highlightClone.Adornee = v.Character
+                highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+                highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                highlightClone.Name = "Highlight"
+            end
+        end
+        
+        game.Players.PlayerAdded:Connect(function(player)
+            repeat wait() until player.Character
+            if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+                local highlightClone = highlight:Clone()
+                highlightClone.Adornee = player.Character
+                highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+                highlightClone.Name = "Highlight"
+            end
+        end)
+        
+        game.Players.PlayerRemoving:Connect(function(playerRemoved)
+            playerRemoved.Character:FindFirstChild("HumanoidRootPart").Highlight:Destroy()
+        end)
+        
+        RunService.Heartbeat:Connect(function()
+            for i, v in pairs(Players) do
+                repeat wait() until v.Character
+                if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+                    local highlightClone = highlight:Clone()
+                    highlightClone.Adornee = v.Character
+                    highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+                    highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    highlightClone.Name = "Highlight"
+                    task.wait()
+                end
+        end
+        end)
+  	end    
+})
+
 local Section = Tab:AddSection({
 	Name = "Diğer Şeyler."
 })
@@ -801,6 +974,27 @@ local p = game:GetService("Players").LocalPlayer
 ts:Teleport(game.PlaceId, p)
   	end    
 })
+
+Tab:AddButton({
+	Name = "Anti AFK",
+	Callback = function()
+         local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+           vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+           wait(1)
+           vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        end)
+
+        OrionLib:MakeNotification({
+	Name = "(DELUXIE) Hazır!",
+	Content = "Artık afk olduğun için oyundan atılmayacaksın.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+  	end    
+})
+
 
 local Tab = Window:MakeTab({
 	Name = "Başka şeyler",
@@ -844,4 +1038,11 @@ Tab:AddParagraph("Oyuncuları boşluğa atın.","Kahraman Avcısı karakterini k
 Tab:AddParagraph("Oyuncuyla hareket edin.","Kahraman Avcısı karakterini kullanırken oyuncularla birlikte hareket etmek için Süzülen Su/Öldürücü Kasırga Akışı kullanırken TP Yürüme Hızını etkinleştirin. (2 kişilik emotelar dahildir.)")
 Tab:AddParagraph("Dağın üstüne çıkın.","Dağların/Duvarın üstüne çıkmak için Kahraman Avcısı karakterini kullanırken birisiyle duvarların köşe kısımlarına geçin. yanınzıdaki kişiye Öldürücü Kasırga Akışı hareketini kullanıp TP Yürüme Hızını etkinleştirirseniz, dağın üstüne çıkabilirsiniz.")
 Tab:AddParagraph("En Güçlü Kahramanın ulti hareketlerini kullanırken hareket edin.","En Güçlü Kahraman karakteri ile ultiniz varsa, vururken hareket etmeyi açmak veya hızınızı değiştirmek hareket ederken ulti hareketlerini kullanmanızı sağlayacaktır.")
-OrionLib:Init()
+
+local Tab = Window:MakeTab({
+	Name = "Güncellemeler",
+	Icon = "rbxassetid://7743875428",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("GÜNCELLEME V1.8","Güncellemer kısmı eklendi. Death Counter ve Atomic Slash odalarına ışınlanma eklendi. (Dünya) Full Karakter ESP eklendi. Öldüğün yerde doğma eklendi. Oyuncu Radarı eklendi. Anti AFK eklendi. ")
