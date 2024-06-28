@@ -2,7 +2,7 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({Name = "Deluxie - EGSA - V1.8", HidePremium = false, SaveConfig = true, IntroText = "DELUXIE", IntroIcon = "rbxassetid://7733752630", Icon = "rbxassetid://7733920519", ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Deluxie - EGSA - V2.0", HidePremium = false, SaveConfig = true, IntroText = "DELUXIE", IntroIcon = "rbxassetid://7733752630", Icon = "rbxassetid://7733920519", ConfigFolder = "OrionTest"})
 
 --Tab 1
 
@@ -28,6 +28,7 @@ local Tab = Window:MakeTab({
 
 Tab:AddParagraph("Merhaba!","Merhaba, "..Player.Name.." ")
 Tab:AddParagraph("Teşekkürler.","Deluxie'yi kullandığın için teşekkür ederim. Umarım keyif alırsın.")
+Tab:AddParagraph("SIKILDIM AQ","Artık ekleyecek bir şey bulamıyorum amk")
 
 local Tab = Window:MakeTab({
 	Name = "Ana Yer",
@@ -311,14 +312,6 @@ Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
 Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
 end)
 Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
-
-OrionLib:MakeNotification({
-	Name = "(DELUXIE) Hazır!",
-	Content = "Artık takılmadan vurup/dash atabilirsin. (Reset atınca gider.)",
-	Image = "rbxassetid://7733964719",
-	Time = 5
-})
-
   	end    
 })
 
@@ -652,7 +645,7 @@ Player.Character.Humanoid.JumpPower = getgenv().JumpPowerValue;
 })
 
 Tab:AddTextbox({
-	Name = "Yükseklik (Orjinal = 0)",
+	Name = "Yükseklik (Orijinal = 0)",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
@@ -661,7 +654,7 @@ Tab:AddTextbox({
 })
 
 Tab:AddTextbox({
-	Name = "FOV (Görüş açısı) (Orjinal = 70)",
+	Name = "FOV (Görüş açısı) (Orijinal = 70)",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
@@ -669,6 +662,121 @@ local FovNumber = Value --Enter your FOV number here
 local Camera = workspace.CurrentCamera
 Camera.FieldOfView = FovNumber
         end	  
+})
+
+Tab:AddButton({
+	Name = "Otur",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Function to make the character sit
+local function makeCharacterSit()
+    humanoid.Sit = true
+end
+
+-- Call the function to make the character sit
+makeCharacterSit()
+
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Yat",
+	Callback = function()
+      		 local Human = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Humanoid
+	 if not Human then
+		 return
+	 end
+	 Human.Sit = true
+	 task.wait(.1)
+	 Human.RootPart.CFrame = Human.RootPart.CFrame * CFrame.Angles(math.pi * .5, 0, 0)
+	 for _, v in ipairs(Human:GetPlayingAnimationTracks()) do
+		 v:Stop()
+	 end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Salakça Dans Et",
+	Callback = function()
+      		dances = {"248263260", "27789359", "45834924", "28488254", "33796059", "30196114", "52155728"}
+	if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+			dances = {"4555808220", "4555782893", "3333432454", "4049037604"}
+	end
+ if theanim then
+	 theanim:Stop()
+ theanim:Destroy()
+		 local animation = Instance.new("Animation")
+		 animation.AnimationId = "rbxassetid://" .. dances[math.random(1, #dances)]
+		 theanim = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(animation)
+		 theanim:Play()
+	 else
+			 local animation = Instance.new("Animation")
+		 animation.AnimationId = "rbxassetid://" .. dances[math.random(1, #dances)]
+		 theanim = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(animation)
+		 theanim:Play()
+		 end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Dans Etmeyi Bırak",
+	Callback = function()
+      		 theanim:Stop()
+            theanim:Destroy()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Karakteri Dondur",
+	Callback = function()
+      		 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Dondurmayı Kaldır",
+	Callback = function()
+      		 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Yürüme Animasyonunu Kaldır",
+	Callback = function()
+      		 game.Players.LocalPlayer.Character.Animate.Disabled = true
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Yürüme Animasyonunu Geri Getir",
+	Callback = function()
+      		 game.Players.LocalPlayer.Character.Animate.Disabled = false
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Sahte Lag",
+	Callback = function()
+      		  FakeLag = true
+ 
+ repeat wait()
+	 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+	 wait(0.05)
+	  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+	  wait(0.05)
+ until FakeLag == false
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Sahte Lagı Durdur",
+	Callback = function()
+      		 FakeLag = false
+  	end    
 })
 
 
@@ -683,7 +791,7 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddTextbox({
-	Name = "Yer Çekimi (Orjinal = 196.2)",
+	Name = "Yer Çekimi (Orjiinal = 196.2)",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
@@ -692,7 +800,7 @@ Tab:AddTextbox({
 })
 
 Tab:AddTextbox({
-	Name = "Parlaklık (Orjinal = 1)",
+	Name = "Parlaklık (Orijinal = 1)",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
@@ -761,6 +869,291 @@ Tab:AddButton({
 	Name = "Atomic Slash Odası (İçeri)",
 	Callback = function()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1057.4031982421875, 157.00021362304688, 23004.546875)
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Zaman",
+	Icon = "rbxassetid://8997384456",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "24 saat biçiminde yazınız."
+})
+
+
+Tab:AddTextbox({
+	Name = "Kendinize Özel Saat Belirleyin",
+	Default = "Örneğin: 20 veya 14",
+	TextDisappear = true,
+	Callback = function(Value)
+		 game:GetService("Lighting").ClockTime = Value
+	end	  
+})
+
+local Section = Tab:AddSection({
+	Name = "Hazırdan Ayarlanmış Zamanlar."
+})
+
+Tab:AddButton({
+	Name = "Sabah (Orijinal)",
+	Callback = function()
+      		game:GetService("Lighting").ClockTime = "12"
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Öğlen",
+	Callback = function()
+      		game:GetService("Lighting").ClockTime = "17"
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Akşam",
+	Callback = function()
+      		game:GetService("Lighting").ClockTime = "20"
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Gece",
+	Callback = function()
+      		game:GetService("Lighting").ClockTime = "24"
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Dünya 2",
+	Icon = "rbxassetid://7733954760",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Yüzeydeki köşeler."
+})
+
+Tab:AddButton({
+	Name = "Yüzey Köşe 1",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(248.1673583984375, 442.1737060546875, -427.5066223144531)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Yüzey Köşe 2",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(514.2482299804688, 440.505615234375, 275.1033935546875)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Yüzey Köşe 3",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(63.071868896484375, 440.50567626953125, 464.6257019042969)
+
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Yüzey Köşe 4",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-219.1529998779297, 440.505615234375, -232.02037048339844)
+
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Çöpler.."
+})
+
+Tab:AddButton({
+	Name = "Çöp 1",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-207.97520446777344, 440.505615234375, -228.6055908203125)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 2",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-64.55192565917969, 440.50567626953125, -231.4476776123047)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 3",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6.41622257232666, 440.50567626953125, -264.3766784667969)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 4",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(57.15296173095703, 440.6312561035156, -277.4119567871094)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 5",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(136.86109924316406, 440.5057678222656, -317.8085021972656)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 6",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(241.36598205566406, 440.9051818847656, -312.5379333496094)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 7",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(439.2267150878906, 440.5055847167969, -194.7757568359375)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 8",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(435.4597473144531, 440.5128173828125, -107.02893829345703)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 9",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(511.36279296875, 440.505615234375, -21.967132568359375)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 10",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(458.79400634765625, 440.4887390136719, -8.843857765197754)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 11",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(458.5498352050781, 440.50567626953125, 101.56220245361328)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 12",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(507.3463439941406, 440.505615234375, 167.84120178222656)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 13",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(446.42010498046875, 440.8918151855469, 227.10023498535156)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 14",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(411.502685546875, 440.505615234375, 274.6161804199219)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 15",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(301.0528869628906, 440.5055847167969, 323.6761474609375)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 16",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(124.20751953125, 440.5058288574219, 409.29644775390625)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 17",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9.492853164672852, 440.8949279785156, 389.04718017578125)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 18",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-112.63226318359375, 440.50567626953125, 288.0550231933594)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 19",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-216.57838439941406, 440.5058288574219, 131.2166290283203)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 20",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-217.75946044921875, 440.505615234375, -70.21232604980469)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 21",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.8180421590805054, 440.50567626953125, 56.59882354736328)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 22",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71.5340576171875, 440.5058288574219, -84.15353393554688)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 23",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(126.01655578613281, 440.50567626953125, -106.67892456054688)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 24",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(323.0826416015625, 440.505859375, 52.35086441040039)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 25",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(175.30796813964844, 440.5058288574219, 162.4028778076172)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 26",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(127.52957153320312, 440.5058288574219, 185.4138641357422)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Çöp 27",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(39.99909973144531, 440.5057373046875, 168.66368103027344)
   	end    
 })
 
@@ -1046,11 +1439,3 @@ Tab:AddParagraph("Oyuncuları boşluğa atın.","Kahraman Avcısı karakterini k
 Tab:AddParagraph("Oyuncuyla hareket edin.","Kahraman Avcısı karakterini kullanırken oyuncularla birlikte hareket etmek için Süzülen Su/Öldürücü Kasırga Akışı kullanırken TP Yürüme Hızını etkinleştirin. (2 kişilik emotelar dahildir.)")
 Tab:AddParagraph("Dağın üstüne çıkın.","Dağların/Duvarın üstüne çıkmak için Kahraman Avcısı karakterini kullanırken birisiyle duvarların köşe kısımlarına geçin. yanınzıdaki kişiye Öldürücü Kasırga Akışı hareketini kullanıp TP Yürüme Hızını etkinleştirirseniz, dağın üstüne çıkabilirsiniz.")
 Tab:AddParagraph("En Güçlü Kahramanın ulti hareketlerini kullanırken hareket edin.","En Güçlü Kahraman karakteri ile ultiniz varsa, vururken hareket etmeyi açmak veya hızınızı değiştirmek hareket ederken ulti hareketlerini kullanmanızı sağlayacaktır.")
-
-local Tab = Window:MakeTab({
-	Name = "Güncellemeler",
-	Icon = "rbxassetid://7743875428",
-	PremiumOnly = false
-})
-
-Tab:AddParagraph("GÜNCELLEME V1.8","Güncellemer kısmı eklendi. Death Counter ve Atomic Slash odalarına ışınlanma eklendi. (Dünya) Full Karakter ESP eklendi. Öldüğün yerde doğma eklendi. Oyuncu Radarı eklendi. Anti AFK eklendi. ")
