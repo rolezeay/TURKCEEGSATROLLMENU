@@ -1448,3 +1448,4 @@ Tab:AddParagraph("Oyuncuları boşluğa atın.","Kahraman Avcısı karakterini k
 Tab:AddParagraph("Oyuncuyla hareket edin.","Kahraman Avcısı karakterini kullanırken oyuncularla birlikte hareket etmek için Süzülen Su/Öldürücü Kasırga Akışı kullanırken TP Yürüme Hızını etkinleştirin. (2 kişilik emotelar dahildir.)")
 Tab:AddParagraph("Dağın üstüne çıkın.","Dağların/Duvarın üstüne çıkmak için Kahraman Avcısı karakterini kullanırken birisiyle duvarların köşe kısımlarına geçin. yanınzıdaki kişiye Öldürücü Kasırga Akışı hareketini kullanıp TP Yürüme Hızını etkinleştirirseniz, dağın üstüne çıkabilirsiniz.")
 Tab:AddParagraph("En Güçlü Kahramanın ulti hareketlerini kullanırken hareket edin.","En Güçlü Kahraman karakteri ile ultiniz varsa, vururken hareket etmeyi açmak veya hızınızı değiştirmek hareket ederken ulti hareketlerini kullanmanızı sağlayacaktır.")
+OrionLib:Init()
