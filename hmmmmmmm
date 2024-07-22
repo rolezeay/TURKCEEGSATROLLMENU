@@ -2,7 +2,7 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({Name = "Deluxie - EGSA - V2.0", HidePremium = false, SaveConfig = true, IntroText = "DELUXIE", IntroIcon = "rbxassetid://7733752630", Icon = "rbxassetid://7733920519", ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Deluxie - EGSA - V2.1", HidePremium = false, SaveConfig = true, IntroText = "DELUXIE", IntroIcon = "rbxassetid://7733752630", Icon = "rbxassetid://7733920519", ConfigFolder = "OrionTest"})
 
 --Tab 1
 
@@ -788,6 +788,295 @@ Tab:AddButton({
   	end    
 })
 
+local Tab = Window:MakeTab({
+	Name = "KJ",
+	Icon = "rbxassetid://7733765398",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "(Animasyon)"
+})
+
+Tab:AddButton({
+	Name = "Ravage (Hasar yiyen kişi)",
+	Callback = function()
+      		 local player = game.Players.LocalPlayer
+repeat wait() until player.Character.Humanoid
+local humanoid = player.Character.Humanoid
+local character = player.Character or player.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://16945557433"
+
+local playAnim = humanoid:LoadAnimation(anim)
+playAnim:Play()
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(1.2)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.4)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.4)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.1)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(0.08)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+
+wait(1.7)
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://17325540665"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+  	end    
+})
+
+Tab:AddButton({
+	Name = "20-20-20 Dropkick (Hasar yiyen kişi)",
+	Callback = function()
+      		 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+local player = game.Players.LocalPlayer
+repeat wait() until player.Character.Humanoid
+local humanoid = player.Character.Humanoid
+local character = player.Character or player.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://17363256069"
+
+local playAnim = humanoid:LoadAnimation(anim)
+playAnim:Play()
+
+
+
+
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "rbxassetid://0"
+soundeffect.Parent = game.Players.LocalPlayer.Character.Torso
+soundeffect:Play()
+soundeffect.Volume = 1
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Vuruş Anim",
+	Icon = "rbxassetid://7733955740",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Suiryu"
+})
+
+Tab:AddButton({
+	Name = "Bullet Barrage",
+	Callback = function()
+      		 local player = game.Players.LocalPlayer
+repeat wait() until player.Character.Humanoid
+local humanoid = player.Character.Humanoid
+local character = player.Character or player.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+
+local anim2 = Instance.new("Animation")
+anim2.AnimationId = "rbxassetid://17799224866"
+
+local playAnim2 = humanoid:LoadAnimation(anim2)
+playAnim2:Play()
+
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Vanishing Kick",
+	Callback = function()
+      		 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+local player = game.Players.LocalPlayer
+repeat wait() until player.Character.Humanoid
+local humanoid = player.Character.Humanoid
+local character = player.Character or player.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+
+local anim2 = Instance.new("Animation")
+anim2.AnimationId = "rbxassetid://17838006839"
+
+local playAnim2 = humanoid:LoadAnimation(anim2)
+playAnim2:Play()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Vanishing Kick (2)",
+	Callback = function()
+      		 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 130
+local player = game.Players.LocalPlayer
+repeat wait() until player.Character.Humanoid
+local humanoid = player.Character.Humanoid
+local character = player.Character or player.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+
+local anim2 = Instance.new("Animation")
+anim2.AnimationId = "rbxassetid://17838619895"
+
+local playAnim2 = humanoid:LoadAnimation(anim2)
+playAnim2:Play()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Whirlwind Drop",
+	Callback = function()
+      		 local player = game.Players.LocalPlayer
+repeat wait() until player.Character.Humanoid
+local humanoid = player.Character.Humanoid
+local character = player.Character or player.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://17857788598"
+
+local playAnim = humanoid:LoadAnimation(anim)
+playAnim:Play()
+wait(0.6)
+playAnim:Stop()
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Garou"
+})
 
 local Tab = Window:MakeTab({
 	Name = "Dünya",
@@ -1441,7 +1730,7 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://7733964719",
 	PremiumOnly = false
 })
-Tab:AddParagraph("Kurucu:","Bu menü Discord'da sleep.info/66niko tarafından yapıldı.")
+Tab:AddParagraph("Kurucu:","Bu menü Discord'da sleep.cold/66niko tarafından yapıldı.")
 Tab:AddParagraph("Hareket ederken vurma nasıl kapatılır?","Hareket ederken vurmayı karakterini resetleyerek kapatabilirsin.")
 Tab:AddParagraph("1 Kereden fazla tıklamayın.","Ana yerdeki hilelere 1 den fazla tıklarsanız hileler/oyununuz bozulur. Oyüzden yapmayın.")
 Tab:AddParagraph("Oyuncuları boşluğa atın.","Kahraman Avcısı karakterini kullanırken oyuncuları boşluğa atmak için Süzülen Su/Öldürücü Kasırga Akışı kullanırken görünmezliğinizi açın. Öldürme serisi olanları trollemek için mükemmel.")
