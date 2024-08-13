@@ -15,7 +15,7 @@ OrionLib:MakeNotification({
 
 OrionLib:MakeNotification({
 	Name = "Merhaba.",
-	Content = "Sleep tarafından yapıldı, iyi eğlenceler!",
+	Content = "plusgiant tarafından yapıldı, iyi eğlenceler!",
 	Image = "rbxassetid://7733752630",
 	Time = 7
 })
@@ -2572,7 +2572,7 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://7733964719",
 	PremiumOnly = false
 })
-Tab:AddParagraph("Kurucu:","Bu menü Discord'da sleep.cold/66niko tarafından yapıldı.")
+Tab:AddParagraph("Kurucu:","Bu menü Discord'da plusgiant/66niko tarafından yapıldı.")
 Tab:AddParagraph("Hareket ederken vurma nasıl kapatılır?","Hareket ederken vurmayı karakterini resetleyerek kapatabilirsin.")
 Tab:AddParagraph("1 Kereden fazla tıklamayın.","Ana yerdeki hilelere 1 den fazla tıklarsanız hileler/oyununuz bozulur. Oyüzden yapmayın.")
 Tab:AddParagraph("Oyuncuları boşluğa atın.","Kahraman Avcısı karakterini kullanırken oyuncuları boşluğa atmak için Süzülen Su/Öldürücü Kasırga Akışı kullanırken görünmezliğinizi açın. Öldürme serisi olanları trollemek için mükemmel.")
